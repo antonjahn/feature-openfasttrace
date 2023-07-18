@@ -1,0 +1,9 @@
+{
+    "name": "OpenFastTrace",
+    "id": "openfasttrace",
+    "version": "3.7.0",
+    "description": "Open source requirement tracing suite",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/common-utils"
+    ]
+}
