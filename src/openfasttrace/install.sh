@@ -1,10 +1,7 @@
 #!/bin/sh
 set -e
 
-echo "Activating feature 'hello'"
-
-GREETING=${GREETING:-undefined}
-echo "The provided greeting is: $GREETING"
+echo "Activating feature 'openfasttrace'"
 
 # The 'install.sh' entrypoint script is always executed as the root user.
 #
@@ -18,12 +15,13 @@ echo "The effective dev container remoteUser's home directory is '$_REMOTE_USER_
 echo "The effective dev container containerUser is '$_CONTAINER_USER'"
 echo "The effective dev container containerUser's home directory is '$_CONTAINER_USER_HOME'"
 
-cat > /usr/local/bin/hello \
+apt-get install openjdk-11-jre
+cd /usr/share/java && wget https://github.com/itsallcode/openfasttrace/releases/download/3.7.0/openfasttrace-3.7.0.jar
+
+cat > /usr/local/bin/openfasttrace \
 << EOF
 #!/bin/sh
-RED='\033[0;91m'
-NC='\033[0m' # No Color
-echo "\${RED}${GREETING}, \$(whoami)!\${NC}"
+/usr/lib/jvm/java-11-openjdk-amd64/bin/java -jar /usr/share/java/openfasttrace-3.7.0.jar $@
 EOF
 
-chmod +x /usr/local/bin/hello
+chmod +x /usr/local/bin/openfasttrace

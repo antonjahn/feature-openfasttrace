@@ -1,5 +1,5 @@
 
-# Hello, World! (hello)
+# OpenFastTrace (openfasttrace)
 
 A hello world feature
 
