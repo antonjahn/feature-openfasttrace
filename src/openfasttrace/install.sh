@@ -21,7 +21,7 @@ cd /usr/share/java && wget https://github.com/itsallcode/openfasttrace/releases/
 cat > /usr/local/bin/openfasttrace \
 << EOF
 #!/bin/sh
-java -jar /usr/share/java/openfasttrace-3.7.0.jar $@
+java -jar /usr/share/java/openfasttrace-3.7.0.jar $$@
 EOF
 
 chmod +x /usr/local/bin/openfasttrace
