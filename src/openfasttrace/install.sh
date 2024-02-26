@@ -15,7 +15,7 @@ echo "The effective dev container remoteUser's home directory is '$_REMOTE_USER_
 echo "The effective dev container containerUser is '$_CONTAINER_USER'"
 echo "The effective dev container containerUser's home directory is '$_CONTAINER_USER_HOME'"
 
-apt-get install openjdk-11-jre
+DEBIAN_FRONTEND=noninteractive apt-get update && apt-get --yes install openjdk-11-jre
 cd /usr/share/java && wget https://github.com/itsallcode/openfasttrace/releases/download/3.7.0/openfasttrace-3.7.0.jar
 
 cat > /usr/local/bin/openfasttrace \
