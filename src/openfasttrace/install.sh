@@ -19,9 +19,9 @@ DEBIAN_FRONTEND=noninteractive apt-get update && apt-get --yes install default-j
 cd /usr/share/java && wget https://github.com/itsallcode/openfasttrace/releases/download/3.7.0/openfasttrace-3.7.0.jar
 
 cat > /usr/local/bin/openfasttrace \
-<< EOF
+<< 'EOF'
 #!/bin/sh
-java -jar /usr/share/java/openfasttrace-3.7.0.jar $$@
+java -jar /usr/share/java/openfasttrace-3.7.0.jar $@
 EOF
 
 chmod +x /usr/local/bin/openfasttrace
